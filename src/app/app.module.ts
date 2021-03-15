@@ -16,6 +16,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { UsersModuleModule } from './users-module/users-module.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, DashComponent, NavigationComponent],
@@ -33,6 +35,7 @@ import { UsersModuleModule } from './users-module/users-module.module';
     UsersModuleModule,
     MatToolbarModule,
     MatSidenavModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent],
